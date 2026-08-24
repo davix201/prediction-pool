@@ -1,4 +1,4 @@
-# PredictionPool
+﻿# PredictionPool
 
 PredictionPool is a generalized prediction-market intelligent contract: the owner opens a pool with a
 question, 2-4 options and one authoritative source URL, users take exactly one position from an internal
@@ -39,6 +39,7 @@ ISO-8601 strings (`2026-01-01T00:00:00Z`) - lexicographic order then equals chro
 ```bash
 pip install -r requirements.txt
 genvm-lint check contracts/PredictionPool.py
+> Windows note: if the linter output crashes with UnicodeEncodeError (cp1252), run `$env:PYTHONUTF8=1` first.
 pytest tests/direct -v
 gltest tests/integration -v -s --network studionet
 genlayer network set studionet
